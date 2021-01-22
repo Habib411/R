@@ -24,4 +24,9 @@ b <- 11:15
 cbind(a,b)
 # to bind values in rows
 rbind(a,b)
-
+# how to define factor
+p <- factor(c("Punjab","Sindh","Blochistan","Sirhad"))
+# using table function to see how many values in a factor
+table(x)
+# to unclass the factor that which numeric values used to define factor
+unclass(x)
