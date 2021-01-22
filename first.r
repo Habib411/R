@@ -51,6 +51,62 @@ rbind(a,b)
 p <- factor(c("Punjab","Sindh","Blochistan","Sirhad"))
 # using table function to see how many values in a factor
 table(x)
-# to unclass the factor that which numeric values used to define factor
+# to un class the factor that which numeric values used to define factor
 unclass(x)
 >>>>>>> 90167e8f9313ed2922c003a31be0b4ffc52f328e
+
+# to add factor method
+
+weekday <- factor(c("saturday","sunday","monday","tuesday","wednesday","thrusday","friday"),
+                  levels = c("satuday","sunday","monday","tuesday","wednesday","thursday","friday"))
+levels(weekday)
+table(weekday)
+length(weekday)
+unclass(weekday)
+
+# to find missing values
+
+v <- factor(c(1,2,3,4,NA,NaN,6))
+V
+table(v)
+dim(v)
+attr(v)
+length(v)
+class(v)
+unclass(v)
+
+
+# to find missing values
+
+is.na(v)
+is.nan(v)
+
+# to add data frame
+
+x <- data.frame(day=1:4,rain=c(T,T,F,F))
+x
+nrow(x)
+ncol(x)
+
+# to assign value of rows
+
+row.names(x) <- c("A","B","c","D")
+x
+
+# object names
+x <- 1:4
+names(x) NULL
+names(x) <- c("col_A","col_B","col_c","col_D")
+x
+row.names(x) <- c("A","B","C","D")
+x <- list(a=1:5,b="ID",c=c("First Name","Last Name"))
+x
+x$a
+x$b
+x$c
+
+
+m <- matrix(1:4, nrow = 2, ncol = 2)
+dimnames(m) <- list(c("r1","r2"),c("c1","c2"))
+m
+dimnames(m)
