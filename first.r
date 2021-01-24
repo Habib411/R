@@ -203,3 +203,22 @@ y[good]
 a<-airquality
 good<-complete.cases(a)
 a[good, ][1:8, ]
+
+# Control Structures :if
+
+x <- 2
+y <- 0
+if (x>3) {
+  y<-10} else{
+    y<-0}
+y
+
+
+# another way to assign values in variable or vector y
+
+y <- if(x>3) {
+  10
+} else {
+    0
+}
+y
