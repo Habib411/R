@@ -1,6 +1,7 @@
 # This is my first repository
+
 print("Hello R!")
-<<<<<<< HEAD
+
 m <- matrix(1:5,nrow = 5,ncol = 5)
 
 m
@@ -9,51 +10,27 @@ dim(m)
 
 attributes(m)
 
-dim(m) <- c(2,3)
-
 m <- 1:6
-
 dim(m)
-
 m
 a <- 1:5
 b <- 11:15
 cbind(a,b)
-
 rbind(a,b)
 
-=======
-# for create matric of 1:5 1 row and five colum
-m <- matrix(1:5,nrow = 5,ncol = 5)
-# for print output of variable or vector "m"
-m
-# to check dimension of "m"
-dim(m)
-# to check attributes of "m"
-attributes(m)
-# another way to assign rows and colums in R
-dim(m) <- c(2,3)
-# for adding values in range
-m <- 1:6
-# check dimension
-dim(m)
-# check vector or variable
-m
-# assign values in range in vector a
-a <- 1:5
-# assign values in range in vector b
-b <- 11:15
-# to bind values in colum
-cbind(a,b)
-# to bind values in rows
-rbind(a,b)
 # how to define factor
+
 p <- factor(c("Punjab","Sindh","Blochistan","Sirhad"))
+
 # using table function to see how many values in a factor
-table(x)
+
+table(p)
+
 # to un class the factor that which numeric values used to define factor
-unclass(x)
->>>>>>> 90167e8f9313ed2922c003a31be0b4ffc52f328e
+
+unclass(p)
+ 
+90167e8
 
 # to add factor method
 
@@ -67,10 +44,10 @@ unclass(weekday)
 # to find missing values
 
 v <- factor(c(1,2,3,4,NA,NaN,6))
-V
+v
 table(v)
 dim(v)
-attr(v)
+attributes(v)
 length(v)
 class(v)
 unclass(v)
@@ -88,17 +65,12 @@ x
 nrow(x)
 ncol(x)
 
-# to assign value of rows
+# to assign value of rows and columns
 
-row.names(x) <- c("A","B","c","D")
-x
-
-# object names
 x <- 1:4
-names(x) NULL
+names(x)
 names(x) <- c("col_A","col_B","col_c","col_D")
 x
-row.names(x) <- c("A","B","C","D")
 x <- list(a=1:5,b="ID",c=c("First Name","Last Name"))
 x
 x$a
@@ -113,6 +85,7 @@ dimnames(m)
 
 
 # Subsetting
+
 x <- c("a","b","c","c","d","a")
 x[1]
 x[2]
@@ -126,9 +99,6 @@ u
 x <- matrix(1:6, 2,3)
 x[1, 2]
 x[2, 1]
-
-# Indices can also be missing.
-
 x[1, ]
 x[, 2]
 x
@@ -147,7 +117,7 @@ x
 
 x <- matrix(1:6, 2, 3)
 x
-x[1, , drop=FALSE]
+x[2, , drop=FALSE]
 
 
 #subsetting Lists
@@ -200,6 +170,7 @@ x[good]
 y[good]
 
 # Removing values "NA" from tables
+
 a<-airquality
 good<-complete.cases(a)
 a[good, ][1:8, ]
@@ -216,9 +187,43 @@ y
 
 # another way to assign values in variable or vector y
 
-y <- if(x>3) {
+y <- if(x<3) {
   10
 } else {
     0
 }
 y
+
+# Control Structures: for
+
+for(i in 1:10) {
+  print(i)
+ }
+
+# 2nd example
+
+x <- c("a", "b","c","d")
+for (i in 1:4) {
+  print(x[i])
+}
+for(i in seq_along(x)) {
+  print(x[i])
+}
+for(letter in x){
+  print(letter)
+  
+}
+for(i in 1:4) print(x[i])
+
+
+# Control Structures: Nested for Loops
+
+#for loops can be nested.
+
+x<-matrix(1:6,2, 3)
+for(i in seq_len(nrow(x))){
+for(j in seq_len(ncol(x))){
+    print(x[i, j])
+    
+  }
+}
