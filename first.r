@@ -227,3 +227,72 @@ for(j in seq_len(ncol(x))){
     
   }
 }
+
+# Control Structure While loop
+# Functions
+
+h <- function (arguments) {
+  ## Do something interesting
+}
+
+# Argument Matching
+
+mydata <- rnorm(100)
+sd(mydata)
+sd(x = mydata)
+sd(x = mydata, na.rom = FALSE)
+sd(na.rm = FALSE, x = mydata)
+sd(na.rm = FALSE, mydata)
+
+# Functions Arguments
+
+# Functions have named arguments which potentially have default values.
+# The formal arguments are the arguments included in the function definition
+# The formals function returns a list of all the formal arguments of function
+# Function arguments can be missing or might have default values
+
+mydata <- data.frame(x=rnorm(100), y=rnorm(100))
+
+# Argument Matching (Contd.)
+
+# You can mix positional matching with matching by name. 
+# When an argument is matched by name, it is "taken out" of the argument list and the remaining unnamed arguments are matched in the order that 
+# they are listed in the function definition.
+
+args(lm)
+
+# The following two calls are equivalent.
+
+mydata <- data.frame(x=rnorm(100),
+                     y=rnorm(100))
+lm(y ~ x, mydata, model = FALSE)
+lm(data=mydata, y~x, model = FALSE, 1:100)
+
+# Function arguments can also be partially matched, which is useful for interactive work. The order of 
+# of operations when given an argument is
+# Check for exact match for a named argument.
+# Check for a partial match.
+# Check for a positional match.
+
+# Defining a Function
+
+f<- function(a, b = 1, c=2, d=NULL) {
+  
+}
+
+# Lazy Evaluation
+# Arguments to functions are evaluated lazily, so they are evaluated only as needed.
+
+f <- function (a, b)
+{
+  a^2
+}
+f(2)
+
+f <- function (a=45, b=35, c=3)
+{    print(a)
+     print(b)
+     print(c)
+  }
+f(1, 35, NULL)
+
