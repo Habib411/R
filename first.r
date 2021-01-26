@@ -240,7 +240,7 @@ h <- function (arguments) {
 mydata <- rnorm(100)
 sd(mydata)
 sd(x = mydata)
-sd(x = mydata, na.rom = FALSE)
+sd(x = mydata, na.rm = FALSE)
 sd(na.rm = FALSE, x = mydata)
 sd(na.rm = FALSE, mydata)
 
