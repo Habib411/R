@@ -229,6 +229,7 @@ for(j in seq_len(ncol(x))){
 }
 
 # Control Structure While loop
+
 # Functions
 
 h <- function (arguments) {
@@ -252,7 +253,7 @@ sd(na.rm = FALSE, mydata)
 # Function arguments can be missing or might have default values
 
 mydata <- data.frame(x=rnorm(100), y=rnorm(100))
-
+mydata
 # Argument Matching (Contd.)
 
 # You can mix positional matching with matching by name. 
@@ -296,3 +297,25 @@ f <- function (a=45, b=35, c=3)
   }
 f(1, 35, NULL)
 
+# coding Standards
+# Always use text/script file or text editor.
+# Indent your code.
+# Limit the width of your code (80 columsn?)
+# Limit the length of individual functions
+
+# Vectorized Operations
+
+x<-1:4; y<-6:9
+x+y
+x>2
+x>=8
+y==8
+x*y
+x/y
+
+# Vectorized Matrix Operations
+
+x <- matrix(1:4, 2, 2); y <- matrix(rep(10,4,),2,2)
+x*y     # element-wise multiplication [,1] [,2]
+x/y
+x%*%y   #true matrix multiplication
