@@ -390,3 +390,79 @@ x-y
 x <- as.POSIXct("2012-10-25 01:00:00")
 y <- as.POSIXct("2012-10-25 03:00:00", tz = "GMT")
 x-y
+
+# Loops Functions
+# Looping on the Command Line
+# Writing for, while loops is useful when programming but not particularly easy when working interactively on the command line for data sets.
+# There are some functions which implement looping to make like easier.
+# lappy: Loop over a list and evaluate a function on each element
+# sapply: Same as lapply but try to simplify the result
+# apply: Apply a function over the margins of an array
+# tapply: Apply a function over subsets of a vector
+# mapply: Multivariate version of lapply
+# An auxiliary function split is also useful, particularly in conjunction with lapply.
+
+# lapply
+# Apply loop on List(lapply)
+# lapply takes three arguments:
+# (1) a list X;
+# (2) a function (or the name of a function) FUN;
+# (3) other arguments via its .... argument.
+
+# lapply (Contd.)
+# lapply always returns a list, regardless of the class of the input.
+x <- list(a = 1:5, b = rnorm(10))
+x
+lapply(x,mean)
+lapply(x,sum)
+lapply(x,sd)
+x <- 1:4
+lapply(x, runif, min=0, max=10)
+# names(x) <-c('a','b','c','d')
+#apply
+x <- matrix(rnorm(200), 20, 10)
+x
+# sapply
+# sapply will try to simplify the result of lapply if possible.
+# If the result is a list where every element is length 1, then a vector is returned.
+# if the result is a list where every element is vector of the same length (>1), a matrix is returned.
+# if it can't figure things out, a list is returned.
+
+x <- list(a = 1:6, b = rnorm(11), c =rnorm(10, 3), d = rnorm(100, 5))
+sapply(x, mean)
+
+# apply
+# apply is used to a evaluate a function (often an anonymous one) over the margins of an array.
+# It is most often used to apply a function to the rows or columns of a matrix.
+# It can be used with general arrays, e.g., taking the average of an array of matrices.
+# It is not really faster than writing a loop, but it works in one line!.
+str(apply)
+# example
+x <- matrix(rnorm(200), 20, 10)
+x
+apply(x, 2, mean)
+
+# col/row sum and mean
+# for sums and means of matrix dimensions, we have some shortcuts.
+# rowSums = apply (x, 1, sum)
+# rowMeans = apply(x, 1, mean)
+# colSums = apply (x, 2, sum)
+# colMeans = apply (x, 2, mean)
+
+apply(x, 2, quantile, probs = c(0.25,0.75))
+
+# tapply
+# tapply is used to apply a function over subsets of a vector. I don't know why it's called tapply.
+str(tapply)
+# X is a vector.
+# INDEX is a factor or a list of factors (or else they are coerced to factors).
+# FUN is a function to be applied.
+# ... contains other arguments to be passed to FUN.
+# simplify, should we simplify the result?
+
+# tapply (Contd.)
+# Take group means.
+x <- c(rnorm(10), runif(10), rnorm(10, 1))
+f <- gl(3, 10)
+tapply(x, f, mean, simplify = FALSE)
+tapply(x, f, range)
