@@ -466,6 +466,7 @@ x <- c(rnorm(10), runif(10), rnorm(10, 1))
 f <- gl(3, 10)
 tapply(x, f, mean, simplify = FALSE)
 tapply(x, f, range)
+<<<<<<< HEAD
 
 # split data
 # split takes a vector or other objects and splits it into groups determined by a factor or list of factors.
@@ -492,3 +493,5 @@ s <- split(airquality, airquality$Month)
 lapply(s, function(x) colSums(x[, c("Ozone", "Solar.R","Wind")]))
 sapply(s, function(x) colMeans(x[, c("Ozone", "Solar.R","Wind")],
                                na.rm = TRUE))
+=======
+>>>>>>> fcd71050eb9fa3345f3136fa491bdcd7e0a1f5a7
